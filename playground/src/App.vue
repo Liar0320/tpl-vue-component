@@ -13,7 +13,7 @@ import VisualEditor from "vue-visual-editor";
     </a>
   </div>
   <HelloWorld msg="dsad"></HelloWorld>
-  <VisualEditor></VisualEditor>
+  <VisualEditor src="test"></VisualEditor>
 </template>
 
 <style scoped>

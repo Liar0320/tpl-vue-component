@@ -1,6 +1,6 @@
-// @ts-ignore
-export { default } from "./index.vue";
+import App from "./App.vue";
 
+export default App;
 export const run = () => {
   console.log(1);
 };

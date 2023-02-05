@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rollup --config ./rollup.config.cjs",
+    "build": "rollup --config ./rollup.config.mjs --bundleConfigAsCjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,13 +12,16 @@
   "license": "ISC",
   "dependencies": {
     "@rollup/plugin-node-resolve": "^15.0.1",
-    "@rollup/plugin-typescript": "^11.0.0",
     "@vue/compiler-sfc": "^3.2.47",
     "rollup": "^3.13.0",
-    "rollup-plugin-typescript": "^1.0.1",
     "rollup-plugin-typescript2": "^0.34.1",
     "rollup-plugin-vue": "^6.0.0",
     "tslib": "^2.5.0",
     "typescript": "^4.9.3"
+  },
+  "devDependencies": {
+    "fast-glob": "^3.2.12",
+    "resolve-from": "^5.0.0",
+    "ts-morph": "^17.0.1"
   }
 }

@@ -1,10 +1,19 @@
-const vue = require("rollup-plugin-vue");
+import vue from "rollup-plugin-vue";
 // const vue = require("@vitejs/plugin-vue")
-const typescript = require("rollup-plugin-typescript2");
+import typescript from "rollup-plugin-typescript2";
 // const typescript = require("@rollup/plugin-typescript");
-const path = require("path");
+import path from "node:path";
 // const resolve = require("@rollup/plugin-node-resolve");
-module.exports = {
+import generateTypes from "./utils/generate-types.mjs";
+
+debugger;
+generateTypes(
+  path.resolve(__dirname, "../packages/src"),
+  path.resolve(__dirname, "../packages/dist"),
+  path.resolve(__dirname, "../packages/tsconfig.json")
+);
+
+export default {
   input: path.resolve(__dirname, "../packages/src/index.ts"),
   output: {
     file: path.resolve(__dirname, "../packages/dist/index.js"),
@@ -16,7 +25,6 @@ module.exports = {
     }),
     typescript({
       tsconfig: path.resolve(__dirname, "../packages/tsconfig.json"),
-      abortOnError:false
     }),
     // vueJsx(),
     // DefineOptions(),

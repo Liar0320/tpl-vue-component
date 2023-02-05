@@ -1,14 +1,13 @@
 <template>
   <div>{{ data.test }}</div>
-  <tsc></tsc>
+  <Test></Test>
 </template>
 
 <script setup lang="ts">
 import { reactive } from "vue";
-// @ts-ignore
-import tsc from "./tsc.vue";
+import Test from "./Test.vue";
 export interface Source {
-  src?: string;
+  src: string;
 }
 defineProps<Source>();
 const data = reactive({
