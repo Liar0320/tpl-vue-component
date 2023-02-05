@@ -6,13 +6,13 @@ import path from "node:path";
 // const resolve = require("@rollup/plugin-node-resolve");
 import generateTypes from "./utils/generate-types.mjs";
 
-debugger;
 generateTypes(
   path.resolve(__dirname, "../packages/src"),
   path.resolve(__dirname, "../packages/dist"),
   path.resolve(__dirname, "../packages/tsconfig.json")
 );
 
+/**@type {import("rollup").RollupOptions} */
 export default {
   input: path.resolve(__dirname, "../packages/src/index.ts"),
   output: {

@@ -2,7 +2,7 @@
  * @Author: lich
  * @Date: 2023-02-05 22:38:07
  * @Last Modified by: lich
- * @Last Modified time: 2023-02-06 00:19:46
+ * @Last Modified time: 2023-02-06 00:23:59
  * @descrition:
  * 生成声明文件
  */
@@ -48,10 +48,6 @@ export async function build() {
   if (outDir) {
     compilerOptions.outDir = outDir;
   }
-  console.log(
-    "🚀 -> file: generate-types.mjs:50 -> build -> compilerOptions",
-    compilerOptions
-  );
 
   const project = new Project({
     compilerOptions,
