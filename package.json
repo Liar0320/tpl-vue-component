@@ -1,15 +1,19 @@
 {
-  "name": "semantic-release",
+  "name": "tpl-vue-component",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A code repository template for building a vue component library",
   "scripts": {
     "dev": "pnpm -C playground dev",
     "build": "pnpm -C build build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "vue component",
+    "vue template",
+    "vue plugin",
+    "vite plugin"
+  ],
+  "author": "liar0320",
   "license": "ISC",
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.2",
