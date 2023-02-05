@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import VisualEditor from "vue-visual-editor"
+import HelloWorld from "./components/HelloWorld.vue";
+import VisualEditor from "vue-visual-editor";
 </script>
 
 <template>
@@ -12,7 +12,8 @@ import VisualEditor from "vue-visual-editor"
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-    <VisualEditor></VisualEditor>
+  <HelloWorld msg="dsad"></HelloWorld>
+  <VisualEditor></VisualEditor>
 </template>
 
 <style scoped>
