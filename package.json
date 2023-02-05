@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "A code repository template for building a vue component library",
   "scripts": {
-    "dev": "pnpm -C playground dev",
+    "dev": "npm run playground",
+    "playground": "pnpm -C playground dev",
+    "build:watch": "pnpm -C build watch",
     "build": "pnpm -C build build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

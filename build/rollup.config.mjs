@@ -3,14 +3,8 @@ import vue from "rollup-plugin-vue";
 import typescript from "rollup-plugin-typescript2";
 // const typescript = require("@rollup/plugin-typescript");
 import path from "node:path";
+import generateDts from "./plugins/generate-dts";
 // const resolve = require("@rollup/plugin-node-resolve");
-import generateTypes from "./utils/generate-types.mjs";
-
-generateTypes(
-  path.resolve(__dirname, "../packages/src"),
-  path.resolve(__dirname, "../packages/dist"),
-  path.resolve(__dirname, "../packages/tsconfig.json")
-);
 
 /**@type {import("rollup").RollupOptions} */
 export default {
@@ -25,6 +19,11 @@ export default {
     }),
     typescript({
       tsconfig: path.resolve(__dirname, "../packages/tsconfig.json"),
+    }),
+    generateDts({
+      pkgRoot: path.resolve(__dirname, "../packages/src"),
+      buildOutput: path.resolve(__dirname, "../packages/dist"),
+      tsConfigFilePath: path.resolve(__dirname, "../packages/tsconfig.json"),
     }),
     // vueJsx(),
     // DefineOptions(),

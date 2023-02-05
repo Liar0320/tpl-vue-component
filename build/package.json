@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rollup --config ./rollup.config.mjs --bundleConfigAsCjs",
+    "watch": "rollup --config ./rollup.config.mjs --bundleConfigAsCjs --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

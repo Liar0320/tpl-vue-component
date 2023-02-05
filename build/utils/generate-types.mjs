@@ -2,7 +2,7 @@
  * @Author: lich
  * @Date: 2023-02-05 22:38:07
  * @Last Modified by: lich
- * @Last Modified time: 2023-02-06 00:23:59
+ * @Last Modified time: 2023-02-06 02:02:21
  * @descrition:
  * 生成声明文件
  */
@@ -124,6 +124,7 @@ export async function build() {
 /**
  * @param {string } _pkgRoot  需要遍历的文件路径
  * @param {string} _buildOutput  打包的输出目录
+ * @param {string} _tsConfigFilePath tsconfig root
  */
 function main(_pkgRoot, _buildOutput, _tsConfigFilePath) {
   pkgRoot = _pkgRoot;
