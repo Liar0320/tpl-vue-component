@@ -7,6 +7,7 @@
     "playground": "pnpm -C playground dev",
     "build:watch": "pnpm -C build watch",
     "build": "pnpm -C build build",
+    "build:playground": "pnpm -C build build &&  pnpm -C playground build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
