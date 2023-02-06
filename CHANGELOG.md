@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Liar0320/tpl-vue-component/compare/v1.0.0...v1.0.1) (2023-02-06)
+
+
+### Bug Fixes
+
+* vercel build - ERR_PNPM_OUTDATED_LOCKFILE  Cannot install with "frozen-lockfile" because pnpm-lock.yaml is not up to date with package.json ([d12d22b](https://github.com/Liar0320/tpl-vue-component/commit/d12d22be615c013982f15f2d770ce19f56dd27da))
+
 # 1.0.0 (2023-02-05)
 
 ### Features
