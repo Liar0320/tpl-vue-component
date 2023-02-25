@@ -1,10 +1,5 @@
 <template>
-  <div
-    aria-label="vue-visual-editor-item"
-    class="vve-item__hightlight"
-    v-bind="bindings"
-  >
-    <p>wqeqweqw</p>
+  <div aria-label="vue-visual-editor-item" class="vve-item__hightlight" v-bind="bindings">
     <slot></slot>
   </div>
 </template>
@@ -12,12 +7,9 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-const props = withDefaults(
-  defineProps<{ eventName?: "click" | "dbclick" | "mouseover" }>(),
-  {
-    eventName: "click",
-  }
-);
+const props = withDefaults(defineProps<{ eventName?: "click" | "dbclick" | "mouseover" }>(), {
+  eventName: "mouseover",
+});
 
 function callback(value: any) {
   console.log("🚀 -> file: App.vue:18 -> callback -> value", value);
@@ -25,8 +17,7 @@ function callback(value: any) {
 
 const bindings = computed(() => {
   return {
-    ["on" + props.eventName.replace(/^\w/, (a) => a.toLocaleUpperCase())]:
-      callback,
+    ["on" + props.eventName.replace(/^\w/, (a) => a.toLocaleUpperCase())]: callback,
   };
 });
 </script>
