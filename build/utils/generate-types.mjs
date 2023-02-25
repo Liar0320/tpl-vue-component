@@ -2,7 +2,7 @@
  * @Author: lich
  * @Date: 2023-02-05 22:38:07
  * @Last Modified by: lich
- * @Last Modified time: 2023-02-26 01:55:19
+ * @Last Modified time: 2023-02-26 01:56:37
  * @descrition:
  * 生成声明文件
  */
@@ -52,7 +52,7 @@ export async function build() {
     tsConfigFilePath,
     skipAddingFilesFromTsConfig: true,
   });
-  const files = await glob("**/*.{js,ts,vue}", {
+  const files = await glob("**/*.{js,ts,vue,svg}", {
     cwd: pkgRoot,
     absolute: true,
     onlyFiles: true,
@@ -62,6 +62,15 @@ export async function build() {
 
   await Promise.all(
     files.map(async (file) => {
+      /**添加svg类型的 声明文件输出 */
+      if (file.endsWith(".svg")) {
+        const sourceFile = project.createSourceFile(path.relative(process.cwd(), file) + ".js", "export default {}", {
+          overwrite: true,
+        });
+        sourceFiles.push(sourceFile);
+        return;
+      }
+
       const content = await fs.promises.readFile(file, "utf8");
       if (file.endsWith(".ts")) {
         const sourceFile = project.createSourceFile(path.relative(process.cwd(), file), content, {
@@ -86,6 +95,7 @@ export async function build() {
           content += compiled.content;
           if (scriptSetup.lang === "ts") isTS = true;
         }
+        // content = content.replace(/\.svg/g, ".svg.js");
         const sourceFile = project.createSourceFile(path.relative(process.cwd(), file) + (isTS ? ".ts" : ".js"), content);
         sourceFiles.push(sourceFile);
       }
