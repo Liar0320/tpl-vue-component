@@ -1,7 +1,6 @@
-import vue from "rollup-plugin-vue";
-// const vue = require("@vitejs/plugin-vue")
+import vue from "@vitejs/plugin-vue";
+// import vue from "rollup-plugin-vue";
 import typescript from "rollup-plugin-typescript2";
-// const typescript = require("@rollup/plugin-typescript");
 import path from "node:path";
 import generateDts from "./plugins/generate-dts";
 // const resolve = require("@rollup/plugin-node-resolve");
@@ -15,7 +14,7 @@ export default {
   },
   plugins: [
     vue({
-      isProduction: true,
+      isProduction: false,
     }),
     typescript({
       tsconfig: path.resolve(__dirname, "../packages/tsconfig.json"),

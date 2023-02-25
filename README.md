@@ -1,5 +1,23 @@
 # tpl-vue-component
 
+## website
+
+- [playground](https://tpl-vue-component.vercel.app/)
+
+## Quickly start
+
+```bash
+pnpm install # install pckages
+
+npm run build:watch # compile packages in workspace
+
+npm run dev # start playground with packages dist
+
+# now you can edit packages 
+# then view it in playground
+
+```
+
 ## 1. What does this code repository do
 
 A code repository template for building a vue component library
