@@ -1,4 +1,5 @@
 import vue from "@vitejs/plugin-vue";
+import svgLoader from "vite-svg-loader";
 // import vue from "rollup-plugin-vue";
 import typescript from "rollup-plugin-typescript2";
 import path from "node:path";
@@ -16,6 +17,7 @@ export default {
     vue({
       isProduction: false,
     }),
+    svgLoader(),
     typescript({
       tsconfig: path.resolve(__dirname, "../packages/tsconfig.json"),
     }),

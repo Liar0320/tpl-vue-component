@@ -23,6 +23,7 @@
   "devDependencies": {
     "fast-glob": "^3.2.12",
     "resolve-from": "^5.0.0",
-    "ts-morph": "^17.0.1"
+    "ts-morph": "^17.0.1",
+    "vite-svg-loader": "^4.0.0"
   }
 }
