@@ -2,7 +2,7 @@
  * @Author: lich
  * @Date: 2023-02-06 01:57:31
  * @Last Modified by: lich
- * @Last Modified time: 2023-02-06 02:09:35
+ * @Last Modified time: 2023-02-26 01:55:22
  */
 import generateTypes from "../utils/generate-types.mjs";
 
@@ -12,11 +12,7 @@ import generateTypes from "../utils/generate-types.mjs";
  * @param {string} opts.buildOutput  打包的输出目录
  * @param {string} opts.tsConfigFilePath tsconfig root
  * @returns {import("rollup").Plugin} */
-export default function generateDts({
-  pkgRoot,
-  buildOutput,
-  tsConfigFilePath,
-}) {
+export default function generateDts({ pkgRoot, buildOutput, tsConfigFilePath }) {
   return {
     name: "generate-dts", // this name will show up in warnings and errors
     buildEnd() {

@@ -2,7 +2,7 @@
  * @Author: lich
  * @Date: 2023-02-05 22:38:07
  * @Last Modified by: lich
- * @Last Modified time: 2023-02-06 02:02:21
+ * @Last Modified time: 2023-02-26 01:55:19
  * @descrition:
  * 生成声明文件
  */
@@ -15,9 +15,7 @@ import resolveFrom from "resolve-from";
 
 let buildOutput = path.resolve(__dirname, "dist");
 let pkgRoot = path.resolve(__dirname, "src");
-let tsConfigFilePath = fs.existsSync("tsconfig.json")
-  ? "tsconfig.json"
-  : undefined;
+let tsConfigFilePath = fs.existsSync("tsconfig.json") ? "tsconfig.json" : undefined;
 
 let vueCompiler;
 
@@ -66,13 +64,9 @@ export async function build() {
     files.map(async (file) => {
       const content = await fs.promises.readFile(file, "utf8");
       if (file.endsWith(".ts")) {
-        const sourceFile = project.createSourceFile(
-          path.relative(process.cwd(), file),
-          content,
-          {
-            overwrite: true,
-          }
-        );
+        const sourceFile = project.createSourceFile(path.relative(process.cwd(), file), content, {
+          overwrite: true,
+        });
         sourceFiles.push(sourceFile);
         return;
       }
@@ -92,10 +86,7 @@ export async function build() {
           content += compiled.content;
           if (scriptSetup.lang === "ts") isTS = true;
         }
-        const sourceFile = project.createSourceFile(
-          path.relative(process.cwd(), file) + (isTS ? ".ts" : ".js"),
-          content
-        );
+        const sourceFile = project.createSourceFile(path.relative(process.cwd(), file) + (isTS ? ".ts" : ".js"), content);
         sourceFiles.push(sourceFile);
       }
     })
@@ -111,11 +102,7 @@ export async function build() {
     for (const outputFile of emitOutput.getOutputFiles()) {
       const filepath = outputFile.getFilePath().replace(".vue.d.ts", ".d.ts");
       await fs.promises.mkdir(path.dirname(filepath), { recursive: true });
-      await fs.promises.writeFile(
-        filepath,
-        outputFile.getText().replace(".vue", ""),
-        "utf8"
-      );
+      await fs.promises.writeFile(filepath, outputFile.getText().replace(".vue", ""), "utf8");
       console.log(`Emitted ${filepath}`);
     }
   }
