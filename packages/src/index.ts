@@ -4,3 +4,5 @@ export default App;
 export const run = () => {
   console.log(1);
 };
+
+console.log("xxx");

@@ -12,8 +12,10 @@ import VisualEditor from "vue-visual-editor";
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="dsad"></HelloWorld>
-  <VisualEditor src="test"></VisualEditor>
+  <VisualEditor>
+    <HelloWorld msg="dsad"></HelloWorld>
+    dasda
+  </VisualEditor>
 </template>
 
 <style scoped>
