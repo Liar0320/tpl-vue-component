@@ -1,9 +1,52 @@
-.vue-visual-editor-item.vvei{
-  position: relative;
+@import "./mixins//mixins.scss";
+
+// 激活的背景色
+@mixin useActiveContent(){
+  content: ' ';
+  @apply absolute inset-0;
+  @apply border border-solid border-purple-500;
+  @apply bg-purple-600 bg-opacity-5;
 }
-.vvei_tools{
-  @apply absolute top-0 right-0;
-  &__tools{
-    color:#000
-  }  
+
+@include b(item){
+  @apply relative;
+  
+  // 工具条
+  @include e(tools){
+    @include m(wraper){
+      @apply absolute inset-0;
+    } 
+ 
+    @apply absolute right-2 top-2 z-10;
+    @apply flex;
+    @apply opacity-0;
+  }
+
+  // 操作
+  @include e(action){
+    @apply cursor-pointer;
+    &:hover{
+      @apply text-purple-600;
+    }
+  }
+
+  // 激活状态，情况一 hover
+  &:hover{
+    @include e(tools){
+      @apply opacity-100;
+    }
+    &::after{
+      @include useActiveContent();
+    }
+  }
+
+  // 激活状态，情况二 focus
+  @include m(focus){
+    @include e(tools){
+      @apply opacity-100;
+    }
+    &::after{
+      @include useActiveContent();
+    }
+  }
 }

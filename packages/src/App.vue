@@ -1,24 +1,30 @@
 <template>
-  <div aria-label="vue-visual-editor-item vvei" class="vue-visual-editor-item vvei" v-bind="bindings">
+  <div aria-label="visual-editor-item" class="ve-item" :class="{ 've-item--focus': state.isActive }" v-bind="bindings">
     <slot></slot>
-    <div class="vvei_tools">
-      <EditIcon></EditIcon>
-      <DeleteIcon></DeleteIcon>
+    <div class="ve-item__tools--wraper">
+      <div class="ve-item__tools">
+        <EditIcon class="ve-item__action"></EditIcon>
+        <DeleteIcon class="ve-item__action"></DeleteIcon>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, reactive } from "vue";
 import EditIcon from "./assets/icons/edit.svg";
 import DeleteIcon from "./assets/icons/delete.svg";
+const state = reactive({
+  isActive: false,
+  show: false,
+});
 
 const props = withDefaults(defineProps<{ eventName?: "click" | "dbclick" | "mouseover" }>(), {
   eventName: "mouseover",
 });
 
 function callback(event: Event) {
-  console.log("🚀 -> file: App.vue:18 -> callback -> value", event);
+  state.show = true;
 }
 
 const bindings = computed(() => {
