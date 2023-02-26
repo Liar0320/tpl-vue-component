@@ -1,7 +1,8 @@
 .vue-visual-editor-item.vvei{
   position: relative;
 }
-.vvei{
+.vvei_tools{
+  @apply absolute top-0 right-0;
   &__tools{
     color:#000
   }  

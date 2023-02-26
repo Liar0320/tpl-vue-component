@@ -25,9 +25,12 @@
     "@esbuild-kit/cjs-loader": "^2.4.2",
     "fast-glob": "^3.2.12",
     "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.1.0",
+    "postcss": "^8.4.21",
     "resolve-from": "^5.0.0",
     "sass": "^1.58.3",
+    "tailwindcss": "^3.2.7",
     "ts-morph": "^17.0.1",
     "vite-svg-loader": "^4.0.0"
   }
