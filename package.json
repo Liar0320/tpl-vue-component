@@ -8,6 +8,7 @@
     "build:watch": "pnpm -C build watch",
     "build": "pnpm -C build build",
     "build:playground": "pnpm -C build build &&  pnpm -C playground build",
+    "build:theme":"pnpm -C build build:theme",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

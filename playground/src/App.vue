@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import VisualEditor from "vue-visual-editor";
+import "vue-visual-editor/dist/styles/index.css";
 </script>
 
 <template>

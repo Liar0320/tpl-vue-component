@@ -1,13 +1,17 @@
 <template>
-  <div aria-label="vue-visual-editor-item" class="vve-item__hightlight" v-bind="bindings">
+  <div aria-label="vue-visual-editor-item vvei" class="vue-visual-editor-item vvei" v-bind="bindings">
     <slot></slot>
-    <EditIcon></EditIcon>
+    <div class="vvei_tools">
+      <EditIcon></EditIcon>
+      <DeleteIcon></DeleteIcon>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed } from "vue";
 import EditIcon from "./assets/icons/edit.svg";
+import DeleteIcon from "./assets/icons/delete.svg";
 
 const props = withDefaults(defineProps<{ eventName?: "click" | "dbclick" | "mouseover" }>(), {
   eventName: "mouseover",
